@@ -122,8 +122,10 @@ function report_customsql_generate_csv($report, $timenow) {
                 $handle = fopen($csvfilename, 'a');
             }
         }
+        error_log(print_r($row, true));
 
         $data = get_object_vars($row);
+        error_log(print_r($data, true));
         foreach ($data as $name => $value) {
             if (report_customsql_get_element_type($name) == 'date_time_selector' &&
                     report_customsql_is_integer($value) && $value > 0) {
