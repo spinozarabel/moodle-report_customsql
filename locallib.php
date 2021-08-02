@@ -145,7 +145,7 @@ function report_customsql_generate_csv($report, $timenow) {
 
         fclose($handle);
     }
-
+    error_log("Report display name is: " . $report->displayname);
     // Update the execution time in the DB.
     $updaterecord = new stdClass();
     $updaterecord->id = $report->id;
